@@ -1,2 +1,2 @@
-var imgs = ["./static/images/index.jpg","./static/images/test.jpeg",];
+var imgs = ["./static/images/index.jpg",];
 export default imgs;
