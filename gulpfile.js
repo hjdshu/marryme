@@ -67,7 +67,7 @@ gulp.task('trans_imgs',function(){
 
 
 gulp.task('destHtml',function () {
-  return gulp.src('./src/index.html')
+  return gulp.src('./src/index.html') 
     .pipe(gulp.dest('./tmp/'))
     .pipe(gulp.dest('./dist/'))
 })
@@ -105,7 +105,7 @@ gulp.task('html',function () {
   return gulp()
 })
 
-gulp.task('build', ['destStatic','trans_imgs','destHtml'], function(){
+gulp.task('build', ['destStatic','destHtml'], function(){
 
   const envs = env.set({
     NODE_ENV: 'production'

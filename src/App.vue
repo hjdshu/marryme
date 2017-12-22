@@ -1,9 +1,14 @@
 <template>
   <div class="app">
     <transition name="slide-fade" model="out-in">
-      <router-view></router-view>
+      <router-view :isMusic="music"></router-view>
     </transition>
     <Tips v-show="false"></Tips>
+    <audio src="./static/bgm.mp3" id="music" autoplay="true" loop="true"></audio>
+    <div class="music" @click="play">
+      <img src="./static/images/music.png" v-show="music" alt="">
+      <img src="./static/images/nomusic.png"  v-show="!music" alt="">
+    </div>
   </div>
 </template>
 
@@ -17,11 +22,24 @@
     },
     data:function () {
       return {
-
+        music:true,
       }
     },
     mounted:function(){
       window.is_change = false;
+
+    },
+    methods:{
+      play:function(){
+        var music =  document.getElementById('music')
+        if(this.music){
+          music.pause();
+          this.music = false;
+        }else{
+          music.play()
+          this.music = true;
+        }
+      }
     }
   }
 </script>
@@ -34,6 +52,11 @@
 <style scoped rel="stylesheet/less" lang="less">
 .app{
 
+  .music{
+    position: fixed;
+    top:30px;
+    right:30px;
+  }
   font-size: 40px;
 
   /* 可以设置不同的进入和离开动画 */

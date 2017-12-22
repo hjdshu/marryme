@@ -9,7 +9,7 @@
     name:'tips',
     data:function () {
       return {
-        msg:'假设这是一个弹窗'
+        msg:'假设这是一个弹窗' 
       }
     }
   }
