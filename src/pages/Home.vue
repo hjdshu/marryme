@@ -21,7 +21,7 @@
       var vm = this;
       if(window.is_change) return;
       vm.inter = setTimeout(function(){
-        vm.go_act()
+        vm.go_act()  
       },3000)
     },
     methods:{
@@ -29,7 +29,7 @@
         this.$router.push({name:'Act'})
         clearInterval(this.inter)
       },
-    }
+    } 
   }
 </script>
 

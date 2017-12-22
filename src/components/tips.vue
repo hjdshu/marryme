@@ -1,6 +1,5 @@
 <template>
   <div class="tips">
-    <img src="./static/images/test.jpeg" alt="">
     <a href="">{{msg}}</a>
   </div>
 </template>
